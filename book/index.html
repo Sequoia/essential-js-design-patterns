@@ -3720,7 +3720,9 @@ function extend( a, b ){
 }
 
 var CaseDecorator = function( macbook ){
-   this.macbook = macbook;
+   //run `this` thru parent constructor
+   MacbookDecorator.apply( this , macbook );
+   this.itemName = "case";
 };
 
 // Let's now extend (decorate) the CaseDecorator
